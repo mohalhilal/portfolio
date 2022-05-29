@@ -4,7 +4,91 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/node_modules/custom/style.css" />
     <title>Welcome - My Portfolio</title>
   </head>
-  <body></body>
+  <body>
+    <nav class="navigasi">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="info-me" id="home">
+        <div class="kotak">
+          <div class="bulat"></div>
+          <img
+            src="https://raw.githubusercontent.com/mohalhilal/portfolio-hilal/master/hilal.png"
+            alt=""
+          />
+          <div class="content">
+            <h2>Tentang Saya</h2>
+            <p>
+              Hallo, nama saya <b>Mohammad AlHilal</b>. Saya adalah seorang
+              mahasiswa yang sedang menempuh studi S1 Teknik Informatika.
+              Sekaligus saya seorang web developer.
+            </p>
+            <p>
+              <b>Tempat Lahir :</b> Cirebon, Indonesia.
+              <br />
+              <b>Tanggal Lahir :</b> 11 Desember 2001
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="project" id="project">
+        <div class="title">
+          <h2><span>Project</span></h2>
+          <p>
+            Project-project dibawah ini adalah hasil dari beberapa latihan saya,
+            yang dibuat untuk sarana pembelajaran dan penilaian kemampuan diri.
+          </p>
+        </div>
+
+        <div class="project-list">
+          <a href="https://github.com/mohalhilal/cli-desimal-to-binner"
+            ><img
+              src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/mohalhilal/cli-desimal-to-binner.png"
+              width="400px"
+          /></a>
+          <a href="https://github.com/mohalhilal/cli-binary-to-decimal"
+            ><img
+              src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/mohalhilal/cli-binary-to-decimal.png"
+              width="400px"
+          /></a>
+          <a href="https://github.com/mohalhilal/xbotv1"
+            ><img
+              src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/mohalhilal/xbotv1.png"
+              width="400px"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+      const options = {
+        bottom: "15px", // default: '32px'
+        right: "unset", // default: '32px'
+        left: "15px", // default: 'unset'
+        time: "0.5s", // default: '0.3s'
+        mixColor: "#fff", // default: '#fff'
+        backgroundColor: "#fff", // default: '#fff'
+        buttonColorDark: "#100f2c", // default: '#100f2c'
+        buttonColorLight: "#fff", // default: '#fff'
+        saveInCookies: true, // default: true,
+        label: "🌓", // default: ''
+        autoMatchOsTheme: true, // default: true
+      };
+
+      const darkmode = new Darkmode(options);
+      darkmode.showWidget();
+    </script>
+  </body>
 </html>
