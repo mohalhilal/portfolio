@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+ <!-- AOS Animation Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+
+
+  <!-- Alpine.js for interactivity -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
+ <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+  
+   /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body{
+       font-family: 'JetBrains Mono', monospace;
+    }
+    /* Custom CSS */
+    .gradient-bg {
+      background: radial-gradient(circle at center, #222, #000);
+    }
+    .arrow-down {
+      animation: bounce 2s infinite;
+    }
+    
+     /* Styling for logos */
+    .tech-logos img {
+      width: 50px;
+      height: 50px;
+      margin: 10px;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .tech-logos img:hover {
+      transform: scale(1.2);
+    }
+
+    /* Popover Styling */
+    .popover {
+      display: none;
+      position: absolute;
+      background-color: #000;
+      color: #fff;
+      border-radius: 4px;
+      padding: 8px;
+      font-size: 14px;
+      max-width: 150px;
+      z-index: 10;
+    }
+
+    .tech-logos img:focus + .popover,
+    .tech-logos img:hover + .popover {
+      display: block;
+    }
+    
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(10px);
+      }
+    }
+    .logo {
+      position: absolute;
+      opacity: 0.8;
+      animation: float 5s ease-in-out infinite;
+      transition: opacity 0.5s ease;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(15deg);
+      }
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+    }
+    /* Logo Styles */
+    .logo-img {
+      width: 70px;
+      height: 70px;
+       filter:  grayscale(100%) brightness(70%) contrast(75%);
+    
+    }
+  </style>
+</head>
+<body class="gradient-bg text-white font-[JetBrains Mono] h-screen pt-24">
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full z-50 bg-black flex flex-col md:flex-row justify-center items-center p-6">
+    <div class="text-3xl font-bold mb-2 md:mb-0 md:mr-6 space-y-6 ">
+      <\>
+    </div>
+    <ul class="flex flex-row flex-wrap justify-center space-x-2 space-y-6 text-center">
+      <li></li>
+      <li><a href="#home" class="nav-link px-4 py-2 border border-white rounded-lg hover:bg-white hover:text-black transition">Home</a></li>
+      <li><a href="#about" class="nav-link px-4 py-2 border border-white rounded-lg hover:bg-white hover:text-black transition">About</a></li>
+      <li><a href="#projects" class="nav-link px-4 py-2 border border-white rounded-lg hover:bg-white hover:text-black transition">Projects</a></li>
+      <li><a href="#contact" class="nav-link px-4 py-2 border border-white rounded-lg hover:bg-white hover:text-black transition">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Section -->
+  <section id="home" class="section flex flex-col justify-center items-center h-full text-center relative">
+
+    <h1 class="text-5xl md:text-6xl font-bold mb-4">
+      <span id="typed-element" class="relative z-30"></span>
+    </h1>
+    <p class="text-2xl md:text-3xl mb-10 relative z-30">WEB DEVELOPER</p>
+    <div class="arrow-down text-3xl">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+          <!-- Floating Logos -->
+    <div class="logo" style="top: 20%; left: 20%;">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/html5.svg" alt="HTML" class="logo-img" />
+    </div>
+    <div class="logo" style="top: 20%; left: 70%;">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/javascript.svg" alt="JavaScript" class="logo-img" />
+    </div>
+    <div class="logo" style="top: 50%; right: 15%;">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/laravel.svg" alt="Laravel" class="logo-img" />
+    </div>
+    <div class="logo" style="bottom: 20%; right: 5%;">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/github.svg" alt="GitHub" class="logo-img" />
+    </div>
+    <div class="logo" style="top: 70%; left: 30%;">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/css3.svg" alt="CSS" class="logo-img" />
+    </div>
+    <div class="logo" style="top: 50%; left: 5%;">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/php.svg" alt="PHP" class="logo-img" />
+    </div>
+  
+  
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section flex flex-col justify-center items-center min-h-screen text-center mt-5" data-aos="fade-up">
+    <!-- Profile Picture with Gradient Border -->
+    <div class="gradient-border w-48 h-48 mt-10 mb-6">
+      <img src="eoehdhsjwiuawhrkwuhj.png" alt="Profile Picture" class="w-full h-full object-cover rounded-full">
+    </div>
+    <p class="text-lg md:text-xl leading-relaxed mb-6 max-w-3xl mx-auto px-6" data-aos="fade-up" data-aos-delay="100">
+      Hello! I'm Mohammad AlHilal, a passionate web developer. I specialize in building dynamic and responsive websites that deliver a great user experience.
+    </p>
+    <p class="text-lg md:text-xl leading-relaxed mb-6 max-w-3xl mx-auto px-6" data-aos="fade-up" data-aos-delay="200">
+      With experience in both frontend and backend development, I love to create websites that are both functional and beautiful. My goal is to continuously improve my skills and learn new technologies to keep up with the rapidly changing web development industry.
+    </p>
+    <br>
+    
+    
+     <!-- Alamat, Email, dan Nomor HP -->
+    <div class="space-y-4">
+      <div class="flex justify-center items-center space-x-2">
+        <span class="text-lg">Cirebon, Jawa Barat, Indonesia</span>
+      </div>
+      
+      <div class="flex justify-center items-center space-x-2">
+        <span class="text-lg font-medium">Email:</span>
+        <span class="text-lg">moh.hilal07@gmail.com</span>
+      </div>
+      <br>
+      <br>
+  </section>
+
+<!-- Technology Stack Section with White Background -->
+<section class="bg-white text-black py-12">
+  <h2 class="text-2xl font-bold mb-4 text-center">Technologies & Tools</h2>
+  <div class="tech-logos flex flex-wrap justify-center relative">
+    <!-- JavaScript Logo with Popover -->
+    <div x-data="{ showPopover: false }" class="relative">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/javascript.svg" alt="JavaScript Logo" @click="showPopover = !showPopover" class="w-12 h-12">
+      <div x-show="showPopover" x-transition class="popover">JavaScript</div>
+    </div>
+
+    <!-- Vscode Logo with Popover -->
+    <div x-data="{ showPopover: false }" class="relative">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/php.svg" alt="React Logo" @click="showPopover = !showPopover" class="w-12 h-12">
+      <div x-show="showPopover" x-transition class="popover">PHP</div>
+    </div>
+
+    <!-- Node.js Logo with Popover -->
+    <div x-data="{ showPopover: false }" class="relative">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/node-dot-js.svg" alt="Node.js Logo" @click="showPopover = !showPopover" class="w-12 h-12">
+      <div x-show="showPopover" x-transition class="popover">Node.js</div>
+    </div>
+
+    <!-- Laravel Logo with Popover -->
+    <div x-data="{ showPopover: false }" class="relative">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/laravel.svg" alt="Laravel Logo" @click="showPopover = !showPopover" class="w-12 h-12">
+      <div x-show="showPopover" x-transition class="popover">Laravel</div>
+    </div>
+
+    <!-- Bootstrap Logo with Popover -->
+    <div x-data="{ showPopover: false }" class="relative">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/bootstrap.svg" alt="Bootstrap Logo" @click="showPopover = !showPopover" class="w-12 h-12">
+      <div x-show="showPopover" x-transition class="popover">Bootstrap</div>
+    </div>
+
+    <!-- Git Logo with Popover -->
+    <div x-data="{ showPopover: false }" class="relative">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/git.svg" alt="Git Logo" @click="showPopover = !showPopover" class="w-12 h-12">
+      <div x-show="showPopover" x-transition class="popover">Git</div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section with Scroll Animation -->
+<section id="projects" class="section min-h-screen py-12 gradient-bg text-white">
+  <h2 class="text-2xl font-bold mb-4 text-center">Projects</h2>
+  
+  <!-- Projects Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6">
+    <!-- Project 1 - Frontend -->
+    <div class="project frontend bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform opacity-0" data-aos="fade-up">
+      <img src="https://via.placeholder.com/300" alt="Project 1" class="w-full h-48 object-cover rounded-md mb-4">
+      <h3 class="text-xl font-semibold mb-2">PHP CLI : Binary To Decimal</h3>
+      <p class="text-gray-800">The Binary to Decimal Converter application is a simple PHP CLI program to convert binary numbers to decimal quickly and easily via the terminal.</p>
+    </div>
+    
+    <div class="project frontend bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform opacity-0" data-aos="fade-up">
+      <img src="https://via.placeholder.com/300" alt="Project 1" class="w-full h-48 object-cover rounded-md mb-4">
+      <h3 class="text-xl font-semibold mb-2">PHP CLI : Decimal to Binary</h3>
+      <p class="text-gray-800">The Decimal to Binary Converter application is a simple PHP CLI program to convert decimal numbers to binary quickly and easily via the terminal.</p>
+    </div>
+        
+    <div class="project frontend bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-2xl transition transform opacity-0" data-aos="fade-up">
+      <img src="https://via.placeholder.com/300" alt="Project 1" class="w-full h-48 object-cover rounded-md mb-4">
+      <h3 class="text-xl font-semibold mb-2">Laravel : Expert System for Diagnosing Laptop Damage</h3>
+      <p class="text-gray-800">The Expert System uses the Forward Chaining and Certainty Factor Method</p>
+    </div>
+
+   
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section min-h-screen flex justify-center items-center text-center bg-black bg-opacity-50 py-16">
+  <div class="w-full px-4 md:px-0 max-w-4xl">
+    <h2 class="text-3xl font-bold text-white mb-6">Contact Me</h2>
+    <p class="text-white mb-8">Feel free to reach out if you have any questions or would like to collaborate!</p>
+
+    <!-- Contact Form -->
+    <form action="#" method="POST" class="space-y-6">
+      <div>
+        <label for="name" class="block text-left text-white font-medium">Your Name</label>
+        <input type="text" id="name" name="name" required class="w-full p-4 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your name">
+      </div>
+      
+      <div>
+        <label for="email" class="block text-left text-white font-medium">Your Email</label>
+        <input type="email" id="email" name="email" required class="w-full p-4 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email">
+      </div>
+      
+      <div>
+        <label for="message" class="block text-left text-white font-medium">Your Message</label>
+        <textarea id="message" name="message" rows="6" required class="w-full p-4 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Write your message"></textarea>
+      </div>
+      
+      <button type="submit" class="w-full py-4 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        Send Message
+      </button>
+    </form>
+  </div>
+ 
+</section>
+
+<!-- Footer -->
+<footer class="gradient-bg text-white py-10">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- About Section -->
+      <div>
+        <h3 class="text-2xl font-bold mb-4">About Me</h3>
+        <p class="text-sm leading-relaxed">
+          Hi, I'm a passionate developer with experience in modern web development technologies. Let's create something amazing together!
+        </p>
+      </div>
+
+      <!-- Navigation Links -->
+      <div>
+        <h3 class="text-2xl font-bold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="#home" class="hover:underline hover:text-gray-300">Home</a></li>
+          <li><a href="#about" class="hover:underline hover:text-gray-300">About</a></li>
+          <li><a href="#projects" class="hover:underline hover:text-gray-300">Projects</a></li>
+          <li><a href="#contact" class="hover:underline hover:text-gray-300">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media & Contact -->
+      <div>
+        <h3 class="text-2xl font-bold mb-4">Follow Me</h3>
+        <div class="flex space-x-4 mb-6">
+          <a href="https://github.com/mohalhilal" aria-label="GitHub" class="text-gray-400 hover:text-gray-300">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+          <a href="https://id.linkedin.com/in/mohalhilal" aria-label="LinkedIn" class="text-gray-400 hover:text-gray-300">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+          <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-gray-300">
+            <i class="fab fa-twitter fa-2x"></i>
+          </a>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">Contact Me</h3>
+        <p>Email: <a href="mailto:your-email@example.com" class="underline hover:text-gray-300">moh.hilal07@gmail.com</a></p>
+  
+      </div>
+    </div>
+
+    <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm">
+      <p>&copy; 2025 Moh Alhilal. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+  <script>
+    // Initialize Typed.js
+    var typed = new Typed('#typed-element', {
+      strings: ["MOHAMMAD", "ALHILAL"],
+      typeSpeed: 50,
+      backSpeed: 50,
+      loop: true
+    });
+
+    // Initialize AOS (Animate On Scroll)
+    AOS.init({
+      duration: 1000,  // animation duration
+      once: true  // run the animation once
+    });
+  </script>
+  
+  <script>
+  const sections = document.querySelectorAll(".section");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  window.addEventListener("scroll", () => {
+    let currentSection = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 100; // Adjust for navbar height
+      const sectionHeight = section.offsetHeight;
+      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("bg-white", "text-black");
+      if (link.getAttribute("href").substring(1) === currentSection) {
+        link.classList.add("bg-white", "text-black");
+      }
+    });
+  });
+</script>
+    <script>
+  let lastScroll = 0;
+  const navbar = document.querySelector("nav");
+
+  // Handle scroll behavior
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll) {
+      // Scrolling down, hide navbar
+      navbar.style.transform = "translateY(-100%)";
+    } else {
+      // Scrolling up, show navbar
+      navbar.style.transform = "translateY(0)";
+    }
+
+    lastScroll = currentScroll;
+
+    // Reset navbar visibility after scrolling stops
+    clearTimeout(navbar.dataset.scrollTimeout);
+    navbar.dataset.scrollTimeout = setTimeout(() => {
+      navbar.style.transform = "translateY(-100%)";
+    }, 2000); // Hide navbar after 2 seconds of inactivity
+  });
+
+  // Initial navbar style
+  navbar.style.transition = "transform 0.3s ease-in-out";
+</script>
+
+</body>
+</html>
