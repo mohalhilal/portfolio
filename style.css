@@ -2,9 +2,21 @@
     html {
       scroll-behavior: smooth;
     }
+
+ #cursor-light {
+      position: fixed;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(138, 43, 226, 0.3), transparent);
+      filter: blur(90px); /* Membuat cahaya melebur */
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+    }
     
     body{
        font-family: 'JetBrains Mono', monospace;
+      overflow:hidden;
     }
     /* Custom CSS */
     .gradient-bg {
