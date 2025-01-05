@@ -249,6 +249,15 @@
     </div>
   </div>
 </footer>
+   <div id="cursor-light"></div>
+  <script>
+    const cursorLight = document.getElementById('cursor-light');
+
+    document.addEventListener('mousemove', (e) => {
+      cursorLight.style.left = `${e.clientX}px`;
+      cursorLight.style.top = `${e.clientY}px`;
+    });
+  </script>
   <script>
     // Initialize Typed.js
     var typed = new Typed('#typed-element', {
