@@ -12,7 +12,7 @@
       border-radius: 50%;
       pointer-events: none;
       transform: translate(-50%, -50%);
-   z-index: 10; /* Selalu di atas konten */
+  
     }
     
     body{
