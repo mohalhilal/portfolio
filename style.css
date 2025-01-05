@@ -16,7 +16,7 @@
     
     body{
        font-family: 'JetBrains Mono', monospace;
-      overflow:hidden;
+      overflow-x:hidden;
     }
     /* Custom CSS */
     .gradient-bg {
