@@ -249,12 +249,12 @@
     </div>
   </div>
 </footer>
-  <script>
+ <script>
     const cursorLight = document.getElementById('cursor-light');
 
     document.addEventListener('mousemove', (e) => {
-      cursorLight.style.left = `${e.clientX}px`;
-      cursorLight.style.top = `${e.clientY}px`;
+      cursorLight.style.left = `${e.pageX}px`; // Menggunakan pageX untuk mendukung scroll
+      cursorLight.style.top = `${e.pageY}px`; // Menggunakan pageY untuk mendukung scroll
     });
   </script>
   <script>
